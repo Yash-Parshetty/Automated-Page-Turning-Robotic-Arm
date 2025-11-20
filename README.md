@@ -168,9 +168,4 @@ Ayush Penkar
 
 Rohit Sunka
 
-📄 License
 
-This project is open-source. You may modify and use it with attribution.
-Turn page automatically
-
-Repeat until stack is finish
