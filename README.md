@@ -1,3 +1,5 @@
+A low-cost Arduino-based robotic arm that automatically turns pages during scanning, built for fast and error-free digitization.
+
 # Automated-Page-Turning-Robotic-Arm
 
 
