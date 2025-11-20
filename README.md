@@ -30,42 +30,6 @@ This project demonstrates the integration of embedded systems, mechanical design
 - Autodesk Fusion / SolidWorks (optional for arm structure)
 - MS Word / LaTeX (Project Report)
 
-
-## Project Architecture Diagram
-
-                    +---------------------------+
-                    |       Flatbed Scanner     |
-                    |  (Scanning Light Source)  |
-                    +-------------+-------------+
-                                  |
-                                  | LDR Sensor detects
-                                  | scan completion
-                                  v
-+-------------------+      +-------------------+
-|  Power Supply     |      |   Arduino Uno     |
-|  6V/5A (Servo)    |----->| (Control Logic)   |
-|  9V (Controller)  |      |                   |
-+----------+--------+      +---------+---------+
-           |                         |
-           | PWM Signals             | Sensor Input
-           v                         v
- +---------+----------+     +--------+--------+
- |   MG995 Servo      |     |   LDR Module    |
- | (Arm + Gripper)    |     +-----------------+
- +---------+----------+
-           |
-           v
- +---------------------------+
- |  Page-Turning Mechanism   |
- | (Silicone-Tipped Arm)     |
- +---------------------------+
-
-System Workflow:
-1. Scanner ON → LDR detects light.
-2. Scanner OFF → Arduino triggers servo.
-3. Servo lifts & turns page.
-4. System resets → next scan cycle.
-
 ## 🔧 Installation & Setup
 
 ### 1️⃣ Clone the Repository
