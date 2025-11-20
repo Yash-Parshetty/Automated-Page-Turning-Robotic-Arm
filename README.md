@@ -1,84 +1,176 @@
+📄 Automated Page-Turning Robotic Arm
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ead903b2-9328-4a35-a473-f056b731d563" />
+
+
+⭐ Tagline
+
 A low-cost Arduino-based robotic arm that automatically turns pages during scanning, built for fast and error-free digitization.
 
-# Automated-Page-Turning-Robotic-Arm
+📘 Overview
 
+The Automated Page-Turning Robotic Arm is designed to solve a real-world problem faced by educational institutions: manually turning each page during the digitization of examination papers.
 
-The Automated Page-Turning Robotic Arm is a low-cost, Arduino-based automation system designed to streamline the digitization of examination papers. Traditional scanning requires a human operator to manually turn each page, which is slow, error-prone, and difficult to scale for large volumes of documents. This project solves that problem by introducing a fully automated, sensor-driven page-turning mechanism that works alongside any standard flatbed scanner.
+This system uses an Arduino Uno, MG995 servo motor, and an LDR sensor to detect when a scan is complete and automatically turn the next page. The silicone-tipped arm ensures safe, single-page handling without tearing or double-turning.
 
-At its core, the system uses an Arduino Uno, MG995 servo motor, and an LDR sensor to detect scan completion and trigger precise page-turning actions. A silicone-tipped arm carefully lifts and flips individual pages without causing tears, folds, or accidental multi-page turns. The design emphasizes accuracy, affordability, and ease of integration, making it suitable for educational institutions, administrative departments, and digitization labs with large scanning workloads.
+This project provides a cost-effective, scalable, and high-accuracy alternative to expensive commercial automatic document feeders.
 
-This project demonstrates the integration of embedded systems, mechanical design, and automation, providing a scalable alternative to expensive commercial document feeders. The prototype achieves a page-turning accuracy of 98%, supports continuous scanning, and offers a strong foundation for future improvements such as computer vision, adaptive height adjustment, and machine learning-based movement optimization.
+🧩 Features
 
-## 🛠️ Tech Stack
+✔️ Automatic page turning synchronized with scanner
 
-### **Hardware**
-- Arduino Uno
-- MG995 High-Torque Servo Motor
-- LDR (Light Dependent Resistor) Sensor
-- Regulated Power Supply (6V 5A + 9V)
-- Silicone-Tipped Page Turner
-- Flatbed Scanner
+✔️ High accuracy (98%) page handling
 
-### **Software / Firmware**
-- Arduino IDE
-- Embedded C / Arduino C++
-- PWM Motor Control
-- Sensor-Based Interrupt Logic
+✔️ Gentle silicone-tipped grip to prevent damage
 
-### **Design & Documentation**
-- Fritzing (optional for circuit diagrams)
-- Autodesk Fusion / SolidWorks (optional for arm structure)
-- MS Word / LaTeX (Project Report)
+✔️ Low-cost and easy to build
 
-## 🔧 Installation & Setup
+✔️ Sensor-driven automation (LDR detects scanner light)
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/<your-username>/page-turning-robotic-arm.git
-cd page-turning-robotic-arm
+✔️ Modular Arduino-controlled design
 
-2️⃣ Install Arduino Dependencies
+✔️ Suitable for schools, universities, admin offices
+
+🛠️ Tech Stack
+Hardware
+
+Arduino Uno
+
+MG995 High-Torque Servo Motor
+
+LDR (Light Dependent Resistor) Sensor
+
+Regulated Power Supply (6V 5A + 9V)
+
+Silicone-Tipped Arm
+
+Flatbed Scanner
+
+Software
 
 Arduino IDE
 
-Servo.h library (built-in)
+Embedded C / Arduino C++
 
-Basic analog sensor read support
+PWM Motor Control
 
-3️⃣ Upload Code to Arduino
+Analog Sensor Input Processing
 
-Connect Arduino Uno via USB.
+Tools
 
-Open .ino file from the repository.
+Fritzing (optional circuit diagram)
 
-Select the correct COM port.
+SolidWorks / Fusion 360 (optional mechanical design)
 
-Upload the sketch.
+📐 System Architecture
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/0512d745-6dd1-46a1-ac23-3f7a598ba486" />
 
-4️⃣ Hardware Assembly
 
-Connect MG995 servo to pin (e.g., D9).
+Workflow
 
-Connect LDR sensor to analog pin (e.g., A0).
+Scanner ON → LDR detects scanning light
 
-Provide separate power supplies:
+Scanner OFF → Arduino triggers servo
 
-6V 5A for servo motor
+Servo lifts & turns a page
 
-9V/USB for Arduino
+System resets → waits for next scan cycle
 
-Mount robotic arm beside scanner bed.
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/<username>/page-turning-robotic-arm.git
+cd page-turning-robotic-arm
+
+2️⃣ Install Arduino IDE & Libraries
+
+Install Arduino IDE
+
+Ensure Servo.h library is available (built-in)
+
+3️⃣ Upload the Code
+
+Open the .ino file from this repo
+
+Select your COM port
+
+Upload the sketch to the Arduino Uno
+
+4️⃣ Hardware Connections
+Component	Arduino Pin
+MG995 Servo	D9
+LDR Sensor	A0
+Ground	GND
+Servo Power	External 6V 5A
+
+⚠️ IMPORTANT:
+Servo motors must NOT be powered from Arduino.
+Use separate 6V 5A supply for stable torque.
 
 5️⃣ Run the System
 
-Place the document stack on scanner.
+Place the document stack on the scanner
 
-Start scanning.
+Start scanning
 
-System automatically:
+System will:
 
-Detects scan completion via LDR
+Detect scan completion
 
-Turns the next page
 
-Repeats the cycle
+🔍 How It Works
+LDR Sensor
+
+Detects the scanner’s light to determine when a page has finished scanning.
+
+Arduino Logic
+
+Reads LDR values → triggers servo movement sequence.
+
+Servo Mechanism
+
+Approach → Grip → Lift → Turn → Reset
+Simulates the natural motion of a human turning a page.
+
+Silicone-Tipped End Effector
+
+Ensures gentle page lifting with no slipping or double-page grabbing.
+
+🚧 Limitations
+
+Works best with up to 50–60 pages
+
+Sensitive to humidity & static electricity
+
+Requires manual alignment before starting
+
+Does not yet correct errors automatically
+
+🚀 Future Enhancements
+
+🤖 Computer Vision for page detection
+
+📏 Adaptive height sensing
+
+🧠 Machine Learning for improved stability
+
+📡 Wi-Fi/Bluetooth remote control
+
+🗂️ Integration with Document Management Systems
+
+🧑‍💻 Team Members
+
+Durvesh Angal
+
+Yash Parshetty
+
+Amol Darkunde
+
+Ayush Penkar
+
+Rohit Sunka
+
+📄 License
+
+This project is open-source. You may modify and use it with attribution.
+Turn page automatically
+
+Repeat until stack is finish
