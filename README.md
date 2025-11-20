@@ -29,3 +29,92 @@ This project demonstrates the integration of embedded systems, mechanical design
 - Fritzing (optional for circuit diagrams)
 - Autodesk Fusion / SolidWorks (optional for arm structure)
 - MS Word / LaTeX (Project Report)
+
+
+## Project Architecture Diagram
+
+                    +---------------------------+
+                    |       Flatbed Scanner     |
+                    |  (Scanning Light Source)  |
+                    +-------------+-------------+
+                                  |
+                                  | LDR Sensor detects
+                                  | scan completion
+                                  v
++-------------------+      +-------------------+
+|  Power Supply     |      |   Arduino Uno     |
+|  6V/5A (Servo)    |----->| (Control Logic)   |
+|  9V (Controller)  |      |                   |
++----------+--------+      +---------+---------+
+           |                         |
+           | PWM Signals             | Sensor Input
+           v                         v
+ +---------+----------+     +--------+--------+
+ |   MG995 Servo      |     |   LDR Module    |
+ | (Arm + Gripper)    |     +-----------------+
+ +---------+----------+
+           |
+           v
+ +---------------------------+
+ |  Page-Turning Mechanism   |
+ | (Silicone-Tipped Arm)     |
+ +---------------------------+
+
+System Workflow:
+1. Scanner ON → LDR detects light.
+2. Scanner OFF → Arduino triggers servo.
+3. Servo lifts & turns page.
+4. System resets → next scan cycle.
+
+## 🔧 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/<your-username>/page-turning-robotic-arm.git
+cd page-turning-robotic-arm
+
+2️⃣ Install Arduino Dependencies
+
+Arduino IDE
+
+Servo.h library (built-in)
+
+Basic analog sensor read support
+
+3️⃣ Upload Code to Arduino
+
+Connect Arduino Uno via USB.
+
+Open .ino file from the repository.
+
+Select the correct COM port.
+
+Upload the sketch.
+
+4️⃣ Hardware Assembly
+
+Connect MG995 servo to pin (e.g., D9).
+
+Connect LDR sensor to analog pin (e.g., A0).
+
+Provide separate power supplies:
+
+6V 5A for servo motor
+
+9V/USB for Arduino
+
+Mount robotic arm beside scanner bed.
+
+5️⃣ Run the System
+
+Place the document stack on scanner.
+
+Start scanning.
+
+System automatically:
+
+Detects scan completion via LDR
+
+Turns the next page
+
+Repeats the cycle
